@@ -5,6 +5,8 @@ export interface IHeaderButton {
 
 export interface IAppHeader {
     changeActiveWindow: (newName: string) => void
+    buttons: Array<IHeaderButton>, 
+    setActiveButton: (mutableButtonIndex: number) => void
 }
 
 export interface IMovie {
@@ -12,7 +14,19 @@ export interface IMovie {
     genre: string,
     backgroundLink: string,
     description: string,
+    trailerLink: string
+    posterLink: string,
+}
 
-    smallBackground: string,
-    trailerLink?: string
+export interface ISeries extends IMovie {
+    seasons: number
+}
+
+export interface IContent {
+    name: string
+    description: string
+    trailerLink: string
+    posterLink: string
+
+    seasons?: number
 }

@@ -1,13 +1,24 @@
 import React from "react";
-import { IMovie } from "./interfaces";
+import { IContent } from "./interfaces";
 
-export const ContentPage: React.FC<IMovie> = (props: IMovie) => {
+export const ContentPage: React.FC<IContent> = (props: IContent) => {
+    const specialInfo = () => {
+        if (props.seasons) {
+            return <>
+                <h3>
+                    Количество сезонов: {props.seasons}
+                </h3>
+            </>
+        }
+    }
+
     return <>
         <h2>
             {props.name}
         </h2>
+        {specialInfo()}
         <article className = 'multimediaInfo'>
-            <img src = {props.smallBackground} alt = 'MovieImage'/>
+            <img src = {props.posterLink} alt = 'MovieImage'/>
             <p>
                 {props.description}
             </p>   

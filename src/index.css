@@ -4,7 +4,7 @@ nav {
 }
 
 .headerButton{  
-  transition: font-size 0.5s;
+  transition: font-size 0.2s;
   padding: 1% 0 1% 0;
   color: black;
   width: 33%;

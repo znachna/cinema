@@ -1,4 +1,3 @@
-import { cpuUsage } from "process";
 import React from "react";
 import { IMovie } from "./interfaces";
 
@@ -21,7 +20,7 @@ export const PopularContent: React.FC<IContent> = (props: IContent) => {
 
     const contentList = contentItems.map(
         (item, index) => {
-            return <img src = {item.smallBackground} className = "smallContent" key = {index} alt = {`Pic ${index}`}
+            return <img src = {item.posterLink} className = "smallContent" key = {index} alt = {`Pic ${index}`}
                     onClick = { () => { props.changeActiveWindow(item.name) } }/>
         }
     )
