@@ -7,7 +7,7 @@ nav {
   transition: font-size 0.2s;
   padding: 1% 0 1% 0;
   color: black;
-  width: 33%;
+  width: calc(1*100%/3);
   text-align: center;
 }
 
@@ -26,7 +26,6 @@ nav {
 
 
 body {
-  margin: 0 20% 0 20%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

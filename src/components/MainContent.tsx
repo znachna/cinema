@@ -10,6 +10,7 @@ import SeriesHandler from "./SeriesHandler";
 import { updateLC } from "./HandleLC"
 import { IHeaderButton } from "./interfaces"
 
+
 interface IMainContent {
     activeWindow: string
     changeActiveWindow: (newName: string) => void
@@ -60,6 +61,6 @@ export const MainContent: React.FC<IMainContent> = (props: IMainContent) => {
 
     
     return <>
-        {pageContent()}
+        {pageContent()} 
     </>
 }

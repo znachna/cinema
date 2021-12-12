@@ -18,11 +18,11 @@ export default () => {
         {name: 'Доктор Хаус', genre: 'Медицинская драма', backgroundLink: house,
         description: 'Все люди врут, но этого не проведешь. Выдающийся медицинский детектив о докторе-гении',
         trailerLink: 'https://www.youtube.com/embed/64LGOCKxTdE', posterLink: smallHouse, 
-        seasons: 9},
+        seasons: 8},
         {name: 'Вечность', genre: 'Ситуационная комедия', backgroundLink: forever,
         description: 'Обаятельный судмедэксперт пытается найти причину своего бессмертия. Захватывающий детектив в духе «Менталиста»',
         trailerLink: 'https://www.youtube.com/embed/-JmVnyJ16d4', posterLink: smallForever, 
-        seasons: 9}
+        seasons: 1}
 
     ];
 
