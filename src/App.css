@@ -1,9 +1,29 @@
-.CinemaApp {
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+@media screen and (max-width: 499px) {
+    .CinemaApp {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content;
+    }
+
+    .MainContent {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
 }
 
-.MainContent {
-    grid-column-start: 2;
-    grid-column-end: 3;
+@media (min-width: 500px) {
+
+    .CinemaApp {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+    
+    .MainContent {
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
 }

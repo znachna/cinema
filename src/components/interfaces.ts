@@ -30,3 +30,16 @@ export interface IContent {
 
     seasons?: number
 }
+
+export interface IArrowSite {
+    name: string
+    isActive: boolean
+}
+
+export interface IHandleArrow {
+    buttons: Array <IHeaderButton>
+    depentables: Array <IArrowSite>
+    activeWindow: string
+    changeActiveWindow: (newWindow: string) => void
+    updateDepentable: (sites: Array<string>) => void
+}

@@ -7,14 +7,19 @@ import { PopularContent } from "./PopularContent";
 import { WelcomeContent } from "./WelcomeContent";
 import { ContentPage } from "./ContentPage"
 import SeriesHandler from "./SeriesHandler";
-import { updateLC } from "./HandleLC"
-import { IHeaderButton } from "./interfaces"
+import { updateLC } from "./HandleLC";
+import { IHeaderButton } from "./interfaces";
+import { IArrowSite } from "./interfaces";
+import { deepStrictEqual } from "assert";
+import { SlowBuffer } from "buffer";
 
 
 interface IMainContent {
     activeWindow: string
     changeActiveWindow: (newName: string) => void
     headerButtons: Array<IHeaderButton>
+    setDepentable: (sites: Array<string>) => void
+    depentables: Array<IArrowSite>
 }
 
 export const MainContent: React.FC<IMainContent> = (props: IMainContent) => {
@@ -24,6 +29,27 @@ export const MainContent: React.FC<IMainContent> = (props: IMainContent) => {
     const contents: Array <IMovie | ISeries> = movies.concat(series); //
     const lastMovieName: string = localStorage.getItem('Фильмы') || movies[0].name;
     const lastSeriesName: string = localStorage.getItem('Сериалы') || series[0].name;
+    const activeButton = props.headerButtons.find( (button) => (button.isActive) );
+
+    if (activeButton) {
+        if (props.activeWindow !== activeButton.name && props.depentables.length === 0 ) {
+            switch (activeButton.name) {
+                case 'Фильмы':
+                    const activeMovieIndex = movies.findIndex( (movie) => movie.name === props.activeWindow );
+                    props.setDepentable( ['Фильмы'].concat( movies.slice(activeMovieIndex).map( (movie) => movie.name) ) );
+                    break;
+                case 'Сериалы':
+                    const activeSeriesIndex = series.findIndex( (series) => series.name === props.activeWindow ); 
+                    props.setDepentable( ['Сериалы'].concat( series.slice(activeSeriesIndex).map( (series) => series.name ) ) );
+                    break;
+            }
+
+        } else {
+            if (props.activeWindow === activeButton.name && props.depentables.length !== 0) {
+                props.setDepentable([]);
+            }
+        }
+    }
 
     const pageContent = () => {
         switch (props.activeWindow) {
@@ -47,11 +73,8 @@ export const MainContent: React.FC<IMainContent> = (props: IMainContent) => {
             </>
         default:
             const page: IContent = contents.find( (content) => ( content.name === props.activeWindow ) ) || movies[0];
-            const activeButton = props.headerButtons.find( (button) => (button.isActive) );
+            if (activeButton) updateLC(activeButton?.name, props.activeWindow);
 
-            if (activeButton?.name) {
-                updateLC(activeButton?.name, props.activeWindow);
-            }
 
             return <ContentPage name = {page.name} description = {page.description} 
                     trailerLink = {page.trailerLink} posterLink = {page.posterLink}

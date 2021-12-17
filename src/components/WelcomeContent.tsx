@@ -1,5 +1,6 @@
 import React from "react";
 import { IMovie } from "./interfaces";
+import './WelcomeContent.css'
 
 interface IWelcomeContent{
     content: IMovie
@@ -8,10 +9,10 @@ interface IWelcomeContent{
 
 export const WelcomeContent: React.FC<IWelcomeContent> = (props: IWelcomeContent) => {
     return <>
-        <h2 className = "welcomeHeader">
+        <h2 className = "WelcomeHeader">
             Недавно просмотренное
         </h2>
-        <div className = 'welcomeContent'
+        <div className = 'WelcomeContent'
             style = {
                 {
                     backgroundImage: `url(${props.content.backgroundLink})`

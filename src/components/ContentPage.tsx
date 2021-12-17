@@ -1,5 +1,6 @@
 import React from "react";
 import { IContent } from "./interfaces";
+import './ContentPage.css'
 
 export const ContentPage: React.FC<IContent> = (props: IContent) => {
     const specialInfo = () => {
@@ -13,19 +14,25 @@ export const ContentPage: React.FC<IContent> = (props: IContent) => {
     }
 
     return <>
+    <div className = 'ContentPage'>
+
         <h2>
             {props.name}
         </h2>
+
         {specialInfo()}
-        <article className = 'multimediaInfo'>
+
+        <article className = 'MultimediaInfo'>
             <img src = {props.posterLink} alt = 'MovieImage'/>
             <p>
                 {props.description}
             </p>   
         </article>
-        <iframe src = {props.trailerLink} className = 'trailer' >
+
+        <iframe src = {props.trailerLink} className = 'Trailer' >
 
         </iframe>
- 
+        
+    </div>
     </>
 }

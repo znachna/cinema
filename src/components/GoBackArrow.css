@@ -1,12 +1,34 @@
-.LeftArrow {
-    top: 45%;
-    left: 12%;
-    position: sticky;
-    max-height: 50px;
-    max-width: 50px;
-    cursor: pointer;
+@media screen and (max-width: 499px) {
+    .LeftArrow {
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+        display: inline-flex;
+        height: 40px;
+    }
+
+    .LeftArrow img {
+        max-height: 30px;
+    }
+
+    .LeftArrow::after{
+        content: 'Назад';
+        color: sandybrown;
+        font-size: 4.5vw;
+    }
+
 }
 
-.LeftArrow:hover {
-    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4) inset;
+@media screen and (min-width: 500px) {
+    .LeftArrow {
+        top: 45%;
+        left: 12%;
+        position: sticky;
+        max-height: 50px;
+        max-width: 50px;
+        cursor: pointer;
+    }
+    
+    .LeftArrow:hover {
+        box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.4) inset;
+    }
 }
