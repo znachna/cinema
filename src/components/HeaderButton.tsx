@@ -1,4 +1,5 @@
 import React from "react";
+import './HeaderButton.css';
 import { IHeaderButton } from "./interfaces"
 
 interface IButton extends IHeaderButton{
@@ -10,7 +11,7 @@ interface IButton extends IHeaderButton{
 
 export const HeaderButton: React.FC<IButton> = (props: IButton) => {
     return <>
-        <div className = { (props.isActive) ? 'headerButton active' : 'headerButton' }
+        <div className = { (props.isActive) ? 'HeaderButton active' : 'HeaderButton' }
             onClick = { () => {
                 props.changeActiveWindow(props.name);
                 props.setActiveButton(props.buttonIndex);

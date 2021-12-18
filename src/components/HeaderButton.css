@@ -1,0 +1,20 @@
+.HeaderButton{  
+    transition: font-size 0.2s;
+    padding: 1% 0 1% 0;
+    color: black;
+    width: calc(1*100%/2);
+    text-align: center;
+}
+  
+.HeaderButton:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 1);
+    border-bottom: 3px solid red; 
+}
+  
+.active {
+    border-top: 3px solid red;
+    background-color: black;
+    color: white;
+    font-size: larger;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { IMovie } from "./interfaces";
+import './PopularContent.css'
 
 interface IContent {
     changeActiveWindow: (newName: string) => void
@@ -20,16 +21,16 @@ export const PopularContent: React.FC<IContent> = (props: IContent) => {
 
     const contentList = contentItems.map(
         (item, index) => {
-            return <img src = {item.posterLink} className = "smallContent" key = {index} alt = {`Pic ${index}`}
+            return <img src = {item.posterLink} className = "SmallContent" key = {index} alt = {`Pic ${index}`}
                     onClick = { () => { props.changeActiveWindow(item.name) } }/>
         }
     )
 
     return <>
-        <h2 className = "popularHeader">
+        <h2 className = "PopularHeader">
             Популярно у зрителей
         </h2>
-        <section className = 'popularContent'>
+        <section className = 'PopularContent'>
             {contentList}
         </section> 
     </>

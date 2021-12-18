@@ -3,19 +3,19 @@
 }
 
 
-@media screen and (max-width: 499px) { 
+@media screen and (max-width: 1024px) { 
     .RightArrow {
+        margin-top: 5%;
         display: inline-flex;
         flex-direction: row-reverse;
         align-items: center;
-        border: 1px solid rgba(0, 0, 0, 0.4);
+        border: 0.5px solid rgba(0, 0, 0, 0.4);
         height: 40px;
     }
 
     .RightArrow::after {
         content: 'Вперед';
-        color: sandybrown;
-        font-size: 4.5vw;
+        font-size: 3vw;
     }
 
     .RightArrow img {
@@ -23,7 +23,7 @@
     }
 }
 
-@media screen and (min-width: 500px) { 
+@media screen and (min-width: 1025px) { 
     .RightArrow {
         top: 45%;
         position: sticky;

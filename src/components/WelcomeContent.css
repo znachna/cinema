@@ -1,4 +1,4 @@
-@media (max-width: 599px) {
+@media (max-width: 480px) {
     .WelcomeContent h3 {
         margin-top: 0;
         font-size: 5vw;
@@ -14,13 +14,31 @@
     }
 }
 
-@media (min-width: 600px) {
-    .WelcomeContent {
-        box-shadow: 5px 10px 10vmax 13vmax rgba(41, 41, 41, 0.97) inset;
-        background-size: 100% auto;
-        height: 33vw;
-    }
+@media (min-width: 1024px) {
+  .WelcomeContent {
+      box-shadow: 5px 10px 10vmax 13vmax rgba(41, 41, 41, 0.97) inset;
+      background-size: 100% auto;
+      height: 33vw;
+  }
 }
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .WelcomeContent {
+      box-shadow: 5px 10px 8vmax 9vmax rgba(41, 41, 41, 0.97) inset;
+      background-size: 100% auto;
+      height: 33vw;
+    }
+
+    .WelcomeContent h3 {
+      font-size: 3vw;
+    }
+
+    .WelcomeContent p {
+      font-size: 2vw;
+    }
+
+}
+
 
 
 .WelcomeContent {

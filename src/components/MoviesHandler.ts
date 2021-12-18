@@ -14,7 +14,7 @@ export default () => {
         { name: 'Шрек', genre: 'Комедия', backgroundLink: shrek, description: 'Мультфильм тысячилетия', 
         posterLink: smallShrek, trailerLink: 'https://www.youtube.com/embed/CwXOrWvPBPk' },
         { name:'Перевозчик', genre: 'Боевик', backgroundLink: transporter, 
-        description: 'Фильм, сделавший Джейсона Стейтема по-нестоящему известным',
+        description: 'Фильм, сделавший Джейсона Стейтема по-настоящему известным',
         posterLink: smallTransporter, trailerLink: 'https://www.youtube.com/embed/7FnbLyv2oio'},
         { name: 'Звездные войны: Месть Ситхов', genre: 'Фантастика', backgroundLink: sw3, 
         description: 'Республика медленно погружается во тьму. Лишь рыцари-джедаи, защитники мира и справедливости, могут противостоять злу, которое вскоре поглотит галактику...',

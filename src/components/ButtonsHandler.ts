@@ -5,7 +5,6 @@ export default () => {
     const [buttons, changeButtons] = useState([
         {name: 'Фильмы', isActive: true},
         {name: 'Сериалы', isActive: false},
-        {name: 'Главная', isActive: false}
     ]);
 
     return {

@@ -1,4 +1,4 @@
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 480px) {
     .CinemaApp {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -14,7 +14,25 @@
     }
 }
 
-@media (min-width: 500px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    .CinemaApp {
+        margin: 0% 20%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content;
+    }
+
+    .MainContent {
+        display: grid;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+}
+
+
+@media (min-width: 1025px) {
 
     .CinemaApp {
         display: grid;
