@@ -10,7 +10,7 @@
     .WelcomeContent {
         box-shadow: 5px 10px 9vmax 10vmax rgba(41, 41, 41, 0.97) inset;
         background-size: 100%;
-        height: 52vw;
+        height: 52vmin;
     }
 }
 
@@ -18,7 +18,7 @@
     .WelcomeContent {
         box-shadow: 5px 10px 10vmax 13vmax rgba(41, 41, 41, 0.97) inset;
         background-size: 100% auto;
-        height: 33vmax;
+        height: 33vw;
     }
 }
 
