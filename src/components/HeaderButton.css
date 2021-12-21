@@ -4,12 +4,14 @@
     color: black;
     width: calc(1*100%/2);
     text-align: center;
+    border-bottom: 3px solid transparent;
 }
   
 .HeaderButton:hover{
     color: white;
     background-color: rgba(0, 0, 0, 1);
     border-bottom: 3px solid red; 
+    font-size: larger;
 }
   
 .active {

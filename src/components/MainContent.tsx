@@ -52,7 +52,9 @@ export const MainContent: React.FC<IMainContent> = (props: IMainContent) => {
         }
     }
     
-    return <>
+    window.scrollTo(0, 0);
+
+    return <div id = "PageContent">
         {pageContent()} 
-    </>
+    </div>
 }
