@@ -15,6 +15,7 @@ export const App: React.FC = () => {
   const [activeWindow, changeActiveWindow] = useState('Фильмы');
   const {depentableSites, updateDepentable} = IArrowHandler();
   const {buttons, setActiveButton} = buttonsHandler();
+  const [mainAddClass, changeClass] = useState('');
 
   const movies: Array <IMovie> = MoviesHandler().movies;
   const series: Array <ISeries> = SeriesHandler().series;
@@ -39,20 +40,24 @@ export const App: React.FC = () => {
         }
     }
 }
-  
+
   return <>
     <div className = 'CinemaApp'>
 
     <GoBackArrow buttons = {buttons} activeWindow = {activeWindow} changeActiveWindow = {changeActiveWindow} 
-                   depentables = {depentableSites} updateDepentable = {updateDepentable}/>
+                  depentables = {depentableSites} updateDepentable = {updateDepentable} 
+                  changeRedirectClass = {changeClass} animationStateClass = {mainAddClass}/>
 
-      <div className = 'MainContent'>
+      <div className = {'MainContent'}>
         <AppHeader changeActiveWindow = {changeActiveWindow} buttons= {buttons} setActiveButton = {setActiveButton} />
-        <MainContent activeWindow = {activeWindow} changeActiveWindow = {changeActiveWindow} headerButtons = {buttons}/>
+        <div id = 'Content' className = {''}>
+          <MainContent activeWindow = {activeWindow} changeActiveWindow = {changeActiveWindow} headerButtons = {buttons}/>
+        </div>
       </div>
 
       <RightArrow buttons = {buttons} activeWindow = {activeWindow} changeActiveWindow = {changeActiveWindow} 
-                   depentables = {depentableSites} updateDepentable = {updateDepentable}/>
+                   depentables = {depentableSites} updateDepentable = {updateDepentable}
+                   changeRedirectClass = {changeClass} animationStateClass = {mainAddClass}/>
     
     </div>
   </> 

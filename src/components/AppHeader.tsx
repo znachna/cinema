@@ -5,35 +5,41 @@ import './AppHeader.css';
 
 export const AppHeader: React.FC<IAppHeader>  = (props) => {
 
-    let coordY: number = window.pageYOffset;
-    let navbarHeight: number;
 
     useEffect( () => {
+        let coordY: number = window.pageYOffset;
+        const navbar: HTMLElement = document.getElementsByTagName('header')[0];
+        const updateNavbar = (prop: string) => {
+            if ( navbar.style.visibility !== prop) {
+                if (prop === 'visible') {
+                    navbar.className = 'creation';
+                } else {
+                    navbar.className = 'hiding';
+                }
+            }
+        }
+
+        updateNavbar('visible');
+
         window.addEventListener('scroll', (e) => {
             const navbar: HTMLElement = document.getElementsByTagName('header')[0];
 
             let currentCoordY = window.pageYOffset;
-            const updateNavbar = (prop: string) => {
-                if ( navbar.style.visibility !== prop) {
-                    navbar.style.visibility = prop;
+            const trueScroll = Math.abs(currentCoordY - coordY) > 3;
+
+            if ( trueScroll && document.body.clientHeight > (currentCoordY + window.innerHeight) ) {
+                if (currentCoordY * 1.5 < navbar.clientHeight) {
+                     updateNavbar('visible');
+                } 
+                else {
+                    if (currentCoordY > coordY) {
+                         updateNavbar('hidden'); 
+                    } else {
+                        updateNavbar('visible');
+                    }
                 }
             }
-
-            navbarHeight = (navbar.clientHeight) ? navbar.clientHeight : navbarHeight;
-
-            if (currentCoordY < navbarHeight * 1.5) {
-                updateNavbar('visible');
-            } 
-            else {
-                if (currentCoordY >= coordY) {
-                    updateNavbar('hidden'); 
-                } else {
-                    updateNavbar('visible');
-                }
-            }
-
             coordY = currentCoordY;
-
         })
 
     } );

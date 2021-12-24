@@ -1,17 +1,20 @@
 import React from "react";
 import './GoBackArrow.css';
 import arrowLeft from '../images/arrow.svg';
-import { IHeaderButton } from './interfaces';
-import { IArrowSite} from './interfaces';
 import { IHandleArrow } from "./interfaces";
+import { AnimationHandler } from "./AnimationHandler";
 
 export const GoBackArrow: React.FC <IHandleArrow> = (props: IHandleArrow) => {
     const viewArrow = () => {
         const activeSiteIndex = props.depentables.findIndex( (site) => site.name === props.activeWindow );
-        if (activeSiteIndex > 0) {
+        const setAnimation = () => {
             const prevSite =  props.depentables[activeSiteIndex - 1];
+            AnimationHandler('Content', ['goLeft', 'rightWave'], [props.changeActiveWindow.bind(null, prevSite.name)] );
+        }
+
+        if (activeSiteIndex > 0) {
             return  <>
-                <div className = 'LeftArrow' onClick = { () => { props.changeActiveWindow(prevSite.name) } }>
+                <div className = 'LeftArrow' onClick = { () => {setAnimation()} }>
                     <img src = {arrowLeft} alt = 'стрелка назад'></img>
                  </div>
             </>

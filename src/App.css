@@ -45,3 +45,61 @@
     }
 
 }
+
+.leftWave{
+    animation-name: left-wave;
+    animation-duration: 1s;
+}
+
+@keyframes left-wave{
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.rightWave{
+    animation-name: right-wave;
+    animation-duration: 1s;
+}
+
+@keyframes right-wave{
+    from {
+        transform: translateX(20%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.goLeft{
+    animation-name: go-left;
+    animation-duration: 0.5s;
+}
+
+@keyframes go-left{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20%);
+    }
+}
+
+.goRight{
+    animation-name: go-right;
+    animation-duration: 0.5s;
+}
+
+@keyframes go-right{
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(20%);
+    }
+}
+
+

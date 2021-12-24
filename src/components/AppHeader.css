@@ -8,3 +8,39 @@ nav {
     display: inline-flex;
     width: 100%;
 }
+
+.creation {
+    animation-name: nav-creation;
+    animation-duration: 0.3s;
+    visibility: visible;
+}
+
+.hiding {
+    animation-name: nav-hiding;
+    animation-duration: 0.3s;
+    visibility: hidden;
+}
+
+@keyframes nav-creation {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes nav-hiding {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}

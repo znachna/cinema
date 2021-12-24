@@ -1,4 +1,5 @@
 import React from "react";
+import { AnimationHandler } from "./AnimationHandler";
 import { IMovie } from "./interfaces";
 import './PopularContent.css'
 
@@ -22,7 +23,9 @@ export const PopularContent: React.FC<IContent> = (props: IContent) => {
     const contentList = contentItems.map(
         (item, index) => {
             return <img src = {item.posterLink} className = "SmallContent" key = {index} alt = {`Pic ${index}`}
-                    onClick = { () => { props.changeActiveWindow(item.name) } }/>
+                    onClick = { () => {
+                        AnimationHandler('Content', ['goRight', 'leftWave'], [props.changeActiveWindow.bind(null, item.name)] );
+                    } }/>
         }
     )
 

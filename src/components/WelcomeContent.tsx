@@ -1,6 +1,7 @@
 import React from "react";
 import { IMovie } from "./interfaces";
 import './WelcomeContent.css'
+import { AnimationHandler} from './AnimationHandler'
 
 interface IWelcomeContent{
     content: IMovie
@@ -19,7 +20,7 @@ export const WelcomeContent: React.FC<IWelcomeContent> = (props: IWelcomeContent
                 }
             }
         onClick = {() => {
-            props.changeActiveWindow(props.content.name);
+            AnimationHandler('Content', ['goRight', 'leftWave'], [props.changeActiveWindow.bind(null, props.content.name)] );
         }}> 
             <section>
                 <h3>

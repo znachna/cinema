@@ -40,6 +40,8 @@ export interface IHandleArrow {
     buttons: Array <IHeaderButton>
     depentables: Array <IArrowSite>
     activeWindow: string
+    animationStateClass: string
+    changeRedirectClass: (redirectClassName: string) => void
     changeActiveWindow: (newWindow: string) => void
     updateDepentable: (sites: Array<string>) => void
 }
